@@ -19,3 +19,8 @@ class IsPatient(BasePermission):
 class IsPatient(BasePermission):
     def has_permission(self, request, view):
         return request.user.patient is not None
+
+
+class IsPatient(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.patient is not None

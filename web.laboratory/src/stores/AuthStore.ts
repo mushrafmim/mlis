@@ -5,6 +5,7 @@ type AuthStore = {
     token: string,
     isAuthenticated: boolean,
     setAuthenticated: (data: object) => void,
+    setUserInfo: (data: object) => void,
 }
 const useAuthStore = create<AuthStore>() ((setState) => ({
     userInfo: {},
@@ -12,6 +13,9 @@ const useAuthStore = create<AuthStore>() ((setState) => ({
     isAuthenticated: false,
     setAuthenticated: (data) => {
         setState({ userInfo: data, token: data.token, isAuthenticated: true });
+    },
+    setUserInfo: (data) => {
+        setState({ userInfo: data, token: data.token, isAuthenticated: false });
     }
 }))
 

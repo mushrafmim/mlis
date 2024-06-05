@@ -26,4 +26,9 @@ class UserLoginSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-   
+
+
+class UserReportResponseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Report
+        fields = ('id', 'name', 'report_format', 'has_paid', 'status', 'updated_at')
